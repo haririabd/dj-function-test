@@ -1,0 +1,5 @@
+# MANIFEST.in
+recursive-include src/emailer/templates *
+recursive-include src/emailer/static *
+recursive-include src/emailer/management *
+include README.md
