@@ -16,6 +16,12 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+EMAIL_BACKEND = 'emailer.backends.zeptomail.ZeptoMailBackend'
+ZEPTOMAIL_API_URL = config('ZEPTOMAIL_API_URL', default='')
+ZEPTOMAIL_API_TOKEN = config('ZEPTOMAIL_API_TOKEN', default='')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default=None)
+SERVER_EMAIL=config('DEFAULT_FROM_EMAIL', default=None)
+
 # Later change this to get from user input
 ADMIN_USER_NAME=config('ADMIN_USER_NAME', default='Admin')
 ADMIN_USER_EMAIL=config('ADMIN_USER_EMAIL', default='hariri.bin.abdullah@gmail.com')
@@ -50,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'emailer',
 ]
 
 MIDDLEWARE = [
